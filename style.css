@@ -24,3 +24,25 @@ html,body {
     background-position: center;
     transform: translateX(-50%);
 }
+.rain {
+    position:absolute;
+    background-image: url("./Images/Raindrops.png");
+    background-size: cover;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+    top: 0px;
+}
+#score {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+}
+#life {
+    position: absolute;
+    padding: 20px;
+    top: 0px;
+    right: 0px;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+}

@@ -17,3 +17,9 @@ document.addEventListener('keydown',(event) => {
         bucket.style.left=`${currentPos}px`;
     }
 });
+const drop = document.createElement("div");
+drop.setAttribute("class","rain");
+let pos = `${Math.random()*1500}px`;
+container.appendChild(drop);
+drop.style.left=pos;
+
