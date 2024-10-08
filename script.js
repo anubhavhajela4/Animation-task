@@ -7,6 +7,7 @@ const endScreen=document.getElementById("endScreen");
 const startButton=document.getElementById("btn1");
 const endButton=document.getElementById("btn2");
 const finalScore =document.getElementById("finalScore");
+const dropSound=document.getElementById("dropSound");
 let points=0;
 let hearts=3;
 let gameActive=false;
@@ -48,6 +49,7 @@ function fallingRain () {
             if(dropRect.bottom >=bucketRect.top && dropRect.top <= bucketRect.bottom && dropRect.right >= bucketRect.left && dropRect.left <= bucketRect.right) {
                 points++;
                 scoreDisplay.innerText =`Score : ${points}`;
+                dropSound.play();
                 clearInterval(verPos);
                 container.removeChild(drop);
             }
