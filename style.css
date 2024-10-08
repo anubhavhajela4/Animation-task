@@ -6,10 +6,21 @@
 html,body {
     overflow: hidden;
 }
-.container {
+#container {
     height: 100vh;
     width: 100%;
-    background-image: url("./Images/bg.png.jpg");
+    background-image: url("./Images/background.jpg");
     background-size: cover;
     background-position: center;
+}
+#bucket {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 100px;
+    height: 80px;
+    background-image: url("./Images/bucket.png");
+    background-size: cover;
+    background-position: center;
+    transform: translateX(-50%);
 }
