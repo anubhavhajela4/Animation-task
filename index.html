@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catch Ball Game!</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./Images/icon.png">
 </head>
 <body>
-    <div id="container">
+    <div id="startScreen">
+        <h1 >Click Here to start the Game</h1>
+        <button id="btn1">Click Here</button>
+    </div>
+    <div id="container" style="display: none;">
         <p id="score">Score : 0</p>
         <p id="life">Life : 3</p>
         <div id="bucket"></div>
+    </div>
+    <div id="endScreen" style="display: none;">
+        <h1>The Game is Over.</h1>
+        <p id="finalScore">Final Score : 0</p>
+        <button id="btn2">Restart!</button>
     </div>
     <script src="script.js"></script>
 </body>

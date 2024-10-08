@@ -2,9 +2,14 @@ const container = document.getElementById("container");
 const bucket =document.getElementById("bucket");
 let scoreDisplay=document.getElementById("score");
 let heartDisplay=document.getElementById("life");
+const startScreen=document.getElementById("startScreen");
+const endScreen=document.getElementById("endScreen");
+const startButton=document.getElementById("btn1");
+const endButton=document.getElementById("btn2");
+const finalScore =document.getElementById("finalScore");
 let points=0;
 let hearts=3;
-let gameActive=true;
+let gameActive=false;
 document.addEventListener('keydown',(event) => {
     let currentPos = bucket.offsetLeft;
     if(event.key==='ArrowLeft') {
@@ -51,15 +56,33 @@ function fallingRain () {
             clearInterval(verPos);
             container.removeChild(drop);
             hearts--;
+            heartDisplay.innerText = `Life : ${hearts}`;
             if(hearts<=0) {
                 gameActive=false;
-                alert("Game Over");
-            }
-            else {
-                heartDisplay.innerText=`Lives :${hearts}`;
+                endGame();
             }
         }
     },30);
 }
-setInterval(fallingRain,2000);
+function startGame (){
+    startScreen.style.display = "none";
+    container.style.display = "block";
+    gameActive = true;
+    points = 0;
+    hearts = 3;
+    scoreDisplay.innerText = `Score : 0`;
+    heartDisplay.innerText = `Life : 3`;
+    setInterval(fallingRain, 2000);
+}
+function endGame () {
+    gameActive = false;
+    container.style.display = "none";
+    endScreen.style.display = "flex";
+    finalScore.innerText = `Your Final Score: ${points}`;
+}
+startButton.addEventListener("click", startGame);
+endButton.addEventListener("click", () => {
+    endScreen.style.display = "none";
+    startGame();
+});
 
