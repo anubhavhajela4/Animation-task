@@ -70,7 +70,7 @@ function fallingRain () {
 }
 function startGame (){
     startScreen.style.display = "none";
-    container.style.display = "block";
+    container.style.display = "flex";
     gameActive = true;
     points = 0;
     hearts = 3;
