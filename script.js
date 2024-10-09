@@ -8,6 +8,7 @@ const startButton=document.getElementById("btn1");
 const endButton=document.getElementById("btn2");
 const finalScore =document.getElementById("finalScore");
 const dropSound=document.getElementById("dropSound");
+const missSound=document.getElementById("missSound");
 let points=0;
 let hearts=3;
 let gameActive=false;
@@ -58,7 +59,8 @@ function fallingRain () {
             clearInterval(verPos);
             container.removeChild(drop);
             hearts--;
-            heartDisplay.innerText = `Life : ${hearts}`;
+            missSound.play();
+            updateHearts();
             if(hearts<=0) {
                 gameActive=false;
                 endGame();
@@ -73,7 +75,7 @@ function startGame (){
     points = 0;
     hearts = 3;
     scoreDisplay.innerText = `Score : 0`;
-    heartDisplay.innerText = `Life : 3`;
+    updateHearts();
     setInterval(fallingRain, 2000);
 }
 function endGame () {
@@ -87,4 +89,7 @@ endButton.addEventListener("click", () => {
     endScreen.style.display = "none";
     startGame();
 });
+function updateHearts () {
+    heartDisplay.innerText="❤️".repeat(hearts);
+}
 
