@@ -30,7 +30,7 @@ document.addEventListener('keydown',(event) => {
 });
 
 function fallingRain () {
-    if(!gameActive) {
+    if(gameActive===false) {
         return;
     }
     const drop = document.createElement("div");
